@@ -53,9 +53,9 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 //项目主页
-def siteUrl = 'https://github.com/hujx114'
+def siteUrl = 'https://github.com/hujxhed'
 //项目的版本控制地址
-def gitUrl = 'https://github.com/hujx114/bodtec_module_push'
+def gitUrl = 'https://github.com/hujxhed/BodtecLibsPush'
 
 //发布到组织名称名字，必须填写
 group = "com.bodtec.libs"
@@ -78,7 +78,7 @@ task javadoc(type: Javadoc) {
     options.charSet 'UTF-8'
     options.author true
     options.version true
-    options.links "https://github.com/hujx114"
+    options.links "https://github.com/hujxhed"
     failOnError false
 }
 
@@ -118,7 +118,7 @@ install {
                     developer {
                         id 'hujx'
                         name 'hujx'
-                        email 'hujunxi114@foxmail.com'
+                        email 'hujxhed@foxmail.com'
                     }
                 }
                 scm {
