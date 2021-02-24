@@ -1,0 +1,3 @@
+include ':libs_push'
+include ':app'
+rootProject.name = "BodtecLibsPush"
