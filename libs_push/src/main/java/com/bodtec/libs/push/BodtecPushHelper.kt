@@ -1,4 +1,4 @@
-package com.bodtec.module.push
+package com.bodtec.libs.push
 
 import android.app.Application
 import android.app.NotificationChannel
@@ -11,7 +11,7 @@ import com.alibaba.sdk.android.push.CommonCallback
 import com.alibaba.sdk.android.push.huawei.HuaWeiRegister
 import com.alibaba.sdk.android.push.noonesdk.PushServiceFactory
 import com.alibaba.sdk.android.push.register.MiPushRegister
-import com.bodtec.module.push.ext.str
+import com.bodtec.libs.push.ext.str
 
 /**
 1、设置小米appId和appKey

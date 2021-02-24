@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bodtec.module.push">
+    package="com.bodtec.libs.push">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -25,12 +25,12 @@
             android:value="100726517" />
 
         <activity
-            android:name="com.bodtec.module.push.act.AliPushPopupAct"
+            android:name="com.bodtec.libs.push.act.AliPushPopupAct"
             android:exported="true"
             android:screenOrientation="portrait" />
 
         <receiver
-            android:name="com.bodtec.module.push.receiver.AliPushReceiver"
+            android:name="com.bodtec.libs.push.receiver.AliPushReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.alibaba.push2.action.NOTIFICATION_OPENED" />

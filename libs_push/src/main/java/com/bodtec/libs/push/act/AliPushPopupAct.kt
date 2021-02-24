@@ -1,11 +1,11 @@
-package com.bodtec.module.push.act
+package com.bodtec.libs.push.act
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
 import com.alibaba.sdk.android.push.AndroidPopupActivity
-import com.bodtec.module.push.R
+import com.bodtec.libs.push.R
 
 private const val SPLASH_CLASS_NAME = "com.bodtec.zk.home.ui.act.SplashAct"
 

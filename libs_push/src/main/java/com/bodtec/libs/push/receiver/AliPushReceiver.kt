@@ -1,13 +1,13 @@
-package com.bodtec.module.push.receiver
+package com.bodtec.libs.push.receiver
 
 import android.content.Context
 import android.util.Log
 import com.alibaba.fastjson.JSON
 import com.alibaba.sdk.android.push.MessageReceiver
 import com.alibaba.sdk.android.push.notification.CPushMessage
-import com.bodtec.module.push.ext.str
-import com.bodtec.module.push.event.AliPushMessageEvent
-import com.bodtec.module.push.event.AliPushNotifyEvent
+import com.bodtec.libs.push.ext.str
+import com.bodtec.libs.push.event.AliPushMessageEvent
+import com.bodtec.libs.push.event.AliPushNotifyEvent
 import org.greenrobot.eventbus.EventBus
 
 /**
