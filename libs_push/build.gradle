@@ -87,6 +87,7 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
 }
+
 //拷贝javadoc文件
 task copyDoc(type: Copy) {
     from "${buildDir}/docs/"
