@@ -1,4 +1,4 @@
-package com.bodtec.libs.push.ext
+package com.bodtec.module.push.ext
 
 import android.text.TextUtils
 

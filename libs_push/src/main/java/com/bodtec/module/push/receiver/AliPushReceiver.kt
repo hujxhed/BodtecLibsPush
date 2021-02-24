@@ -1,13 +1,13 @@
-package com.bodtec.libs.push.receiver
+package com.bodtec.module.push.receiver
 
 import android.content.Context
 import android.util.Log
 import com.alibaba.fastjson.JSON
 import com.alibaba.sdk.android.push.MessageReceiver
 import com.alibaba.sdk.android.push.notification.CPushMessage
-import com.bodtec.libs.push.ext.str
-import com.bodtec.libs.push.event.AliPushMessageEvent
-import com.bodtec.libs.push.event.AliPushNotifyEvent
+import com.bodtec.module.push.ext.str
+import com.bodtec.module.push.event.AliPushMessageEvent
+import com.bodtec.module.push.event.AliPushNotifyEvent
 import org.greenrobot.eventbus.EventBus
 
 /**
@@ -25,7 +25,11 @@ class AliPushReceiver : MessageReceiver() {
         super.onMessage(context, cPushMessage)
         val msg = cPushMessage?.content ?: ""
         Log.e(TAG_PUSH, "收到推送消息：$msg")
-        EventBus.getDefault().post(AliPushMessageEvent(msg))
+        EventBus.getDefault().post(
+            AliPushMessageEvent(
+                msg
+            )
+        )
     }
 
     /**

@@ -1,4 +1,4 @@
-package com.bodtec.libs.push.bean;
+package com.bodtec.module.push.bean;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.bodtec.libs.push.act
+package com.bodtec.module.push.act
 
 import android.content.Intent
 import android.os.Bundle

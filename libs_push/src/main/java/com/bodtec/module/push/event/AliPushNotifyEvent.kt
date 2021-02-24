@@ -1,4 +1,4 @@
-package com.bodtec.libs.push.event
+package com.bodtec.module.push.event
 
 /**
  * hujx 2020/9/25
