@@ -1,7 +1,7 @@
 package com.bodtec.libs.push.demo
 
 import android.app.Application
-import com.bodtec.module.push.BodtecPushHelper
+import com.bodtec.libs.push.BodtecPushHelper
 
 /**
  * hujx 2/24/21
