@@ -71,7 +71,7 @@ task sourcesJar(type: Jar) {
     classifier = 'sources'
 }
 //生成文档
-task javadoc(type: Javadoc) {
+/*task javadoc(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
     options.encoding "UTF-8"
@@ -80,23 +80,23 @@ task javadoc(type: Javadoc) {
     options.version true
     options.links "https://github.com/hujxhed"
     failOnError false
-}
+}*/
 
 //文档打包成jar
-task javadocJar(type: Jar, dependsOn: javadoc) {
+/*task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
-}
+}*/
 
 //拷贝javadoc文件
-task copyDoc(type: Copy) {
+/*task copyDoc(type: Copy) {
     from "${buildDir}/docs/"
     into "docs"
-}
+}*/
 
 //上传到jCenter所需要的源码文件
 artifacts {
-    archives javadocJar
+    //archives javadocJar
     archives sourcesJar
 }
 
