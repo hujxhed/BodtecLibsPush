@@ -5,9 +5,9 @@ import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
 import com.alibaba.sdk.android.push.AndroidPopupActivity
+import com.blankj.utilcode.util.SPUtils
+import com.bodtec.module.push.BodtecPushConst
 import com.bodtec.module.push.R
-
-private const val SPLASH_CLASS_NAME = "com.bodtec.zk.home.ui.act.SplashAct"
 
 class AliPushPopupAct : AndroidPopupActivity() {
 
@@ -32,9 +32,10 @@ class AliPushPopupAct : AndroidPopupActivity() {
     ) {
         //Log.e(TAG, "title: $title, content: $content, extMap: ${Gson().toJson(extMap)}")
         try {
+            val splashPath = SPUtils.getInstance().getString(BodtecPushConst.KEY_SPLASH_PAGE)
             val messageId = extMap["\$messageId"]
             val action = extMap["\$action"]
-            val clazz = Class.forName(SPLASH_CLASS_NAME)
+            val clazz = Class.forName(splashPath)
             val mIntent = Intent(this@AliPushPopupAct, clazz)
             mIntent.putExtra("param_1", messageId)
             mIntent.putExtra("param_2", action)

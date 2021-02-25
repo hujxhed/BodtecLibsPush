@@ -11,6 +11,7 @@ import com.alibaba.sdk.android.push.CommonCallback
 import com.alibaba.sdk.android.push.huawei.HuaWeiRegister
 import com.alibaba.sdk.android.push.noonesdk.PushServiceFactory
 import com.alibaba.sdk.android.push.register.MiPushRegister
+import com.blankj.utilcode.util.SPUtils
 import com.bodtec.module.push.ext.str
 
 /**
@@ -39,10 +40,12 @@ object BodtecPushHelper {
      */
     fun initAliPush(
         application: Application,
-        channelName: String? = "",
-        miAppId: String = "",
-        miAppKey: String = ""
+        channelName: String,
+        miAppId: String,
+        miAppKey: String,
+        splashPagePath: String
     ) {
+        SPUtils.getInstance().put(BodtecPushConst.KEY_SPLASH_PAGE, splashPagePath)
         createNotificationChannel(application.applicationContext, channelName.str())
         PushServiceFactory.init(application.applicationContext)
         val pushService = PushServiceFactory.getCloudPushService()
