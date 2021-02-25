@@ -11,6 +11,7 @@ class MyApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
+        //初始化推送
         BodtecPushHelper.initAliPush(
             this,
             channelName = "ZK_HOME",//通知渠道名
