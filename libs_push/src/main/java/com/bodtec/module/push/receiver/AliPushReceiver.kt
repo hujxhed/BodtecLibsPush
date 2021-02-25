@@ -14,7 +14,7 @@ import org.greenrobot.eventbus.EventBus
  * hujx 2020/9/25
  */
 
-private const val TAG_PUSH = "AliPushReceiver"
+private const val TAG_PUSH = "BodtecLibsPush"
 
 class AliPushReceiver : MessageReceiver() {
 

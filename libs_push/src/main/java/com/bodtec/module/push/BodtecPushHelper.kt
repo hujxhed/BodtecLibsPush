@@ -16,13 +16,15 @@ import com.bodtec.module.push.ext.str
 /**
 1、设置小米appId和appKey
 
-2、在manifests中配置appkey和appsecret
+2、设置华为appid
+
+3、在manifests中配置appkey和appsecret
 <meta-data android:name="com.alibaba.app.appkey" android:value="***" />
 <meta-data android:name="com.alibaba.app.appsecret" android:value="***" />
 
-3、在AliPushPopupAct中设置要启动的App的Splash页面,在act_ali_push_popup中设置App的Logo图片
+4、在AliPushPopupAct中设置要启动的App的Splash页面,在act_ali_push_popup中设置App的Logo图片
 
-4、在App的MainAct中监听EventBus
+5、在App的MainAct中监听EventBus
 @Subscribe(threadMode = ThreadMode.MAIN)
 fun onMessageEvent(event: AliPushMessageEvent)
 fun onMessageEvent(event: AliPushNotifyEvent)
@@ -30,22 +32,17 @@ fun onMessageEvent(event: AliPushNotifyEvent)
  */
 object BodtecPushHelper {
 
-    //小米推送appid和appkey
-    //private const val mMiAppid = "2882303761517999750"
-    //private const val mMiAppKey = "5521799935750"
-
     /**
      * 初始化云推送通道
      */
     fun initAliPush(
         application: Application,
+        channelName: String? = "",
         miAppId: String = "",
         miAppKey: String = "",
         splashFullPath: String = ""
     ) {
-        createNotificationChannel(
-            application.applicationContext
-        )
+        createNotificationChannel(application.applicationContext, channelName.str())
         PushServiceFactory.init(application.applicationContext)
         val pushService = PushServiceFactory.getCloudPushService()
         pushService.register(application.applicationContext, object : CommonCallback {
@@ -71,20 +68,16 @@ object BodtecPushHelper {
         return PushServiceFactory.getCloudPushService().deviceId.str()
     }
 
-    private fun createNotificationChannel(context: Context) {
+    private fun createNotificationChannel(context: Context, channelName: String) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val mNotificationManager =
                 context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             // 通知渠道的id
             val id = "1"
-            // 用户可以看到的通知渠道的名字.
-            val name: CharSequence = "ZK_HOME"
-            // 用户可以看到的通知渠道的描述
-            val description = "ZK_HOME"
             val importance: Int = NotificationManager.IMPORTANCE_HIGH
-            val mChannel = NotificationChannel(id, name, importance)
+            val mChannel = NotificationChannel(id, channelName, importance)
             // 配置通知渠道的属性
-            mChannel.description = description
+            mChannel.description = channelName
             // 设置通知出现时的闪灯（如果 android 设备支持的话）
             mChannel.enableLights(true)
             mChannel.lightColor = Color.RED
