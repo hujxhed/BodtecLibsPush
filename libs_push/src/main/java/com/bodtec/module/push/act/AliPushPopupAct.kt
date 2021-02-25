@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
 import com.alibaba.sdk.android.push.AndroidPopupActivity
-import com.bodtec.libs.push.R
+import com.bodtec.module.push.R
 
 private const val SPLASH_CLASS_NAME = "com.bodtec.zk.home.ui.act.SplashAct"
 

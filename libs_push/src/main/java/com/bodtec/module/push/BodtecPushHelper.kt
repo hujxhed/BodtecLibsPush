@@ -14,15 +14,17 @@ import com.alibaba.sdk.android.push.register.MiPushRegister
 import com.bodtec.module.push.ext.str
 
 /**
-1、设置小米appId和appKey
 
-2、设置华为appid
+1、在App/manifests/application节点下设置推送的appkey、appsecret
+<meta-data android:name="com.alibaba.app.appkey" android:value="25893456" />
+<meta-data android:name="com.alibaba.app.appsecret" android:value="bbf0f540e8868f2ae1fbac66650eb5ed" />
 
-3、在manifests中配置appkey和appsecret
-<meta-data android:name="com.alibaba.app.appkey" android:value="***" />
-<meta-data android:name="com.alibaba.app.appsecret" android:value="***" />
+2、在App/manifests/application节点下设置华为appid
+<meta-data android:name="com.huawei.hms.client.appid"  android:value="100726517" />
 
-4、在AliPushPopupAct中设置要启动的App的Splash页面,在act_ali_push_popup中设置App的Logo图片
+3、设置小米appId和appKey(代码设置)
+
+4、在AliPushPopupAct中设置要启动的App的Splash页面
 
 5、在App的MainAct中监听EventBus
 @Subscribe(threadMode = ThreadMode.MAIN)

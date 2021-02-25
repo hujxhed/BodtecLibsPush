@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bodtec.libs.push">
+    package="com.bodtec.module.push">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -14,23 +14,12 @@
     <uses-permission android:name="android.permission.REORDER_TASKS" />
 
     <application>
-        <meta-data
-            android:name="com.alibaba.app.appkey"
-            android:value="25893456" />
-        <meta-data
-            android:name="com.alibaba.app.appsecret"
-            android:value="bbf0f540e8868f2ae1fbac66650eb5ed" />
-        <meta-data
-            android:name="com.huawei.hms.client.appid"
-            android:value="100726517" />
-
         <activity
-            android:name="com.bodtec.libs.push.com.bodtec.module.push.act.AliPushPopupAct"
+            android:name="com.bodtec.module.push.act.AliPushPopupAct"
             android:exported="true"
             android:screenOrientation="portrait" />
-
         <receiver
-            android:name="com.bodtec.libs.push.com.bodtec.module.push.receiver.AliPushReceiver"
+            android:name="com.bodtec.module.push.receiver.AliPushReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.alibaba.push2.action.NOTIFICATION_OPENED" />
