@@ -40,7 +40,8 @@ object BodtecPushHelper {
     fun initAliPush(
         application: Application,
         miAppId: String = "",
-        miAppKey: String = ""
+        miAppKey: String = "",
+        splashFullPath: String = ""
     ) {
         createNotificationChannel(
             application.applicationContext
