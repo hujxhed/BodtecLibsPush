@@ -41,8 +41,7 @@ object BodtecPushHelper {
         application: Application,
         channelName: String? = "",
         miAppId: String = "",
-        miAppKey: String = "",
-        splashFullPath: String = ""
+        miAppKey: String = ""
     ) {
         createNotificationChannel(application.applicationContext, channelName.str())
         PushServiceFactory.init(application.applicationContext)
