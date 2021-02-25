@@ -1,0 +1,39 @@
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'com.bodtec.libs'
+
+install {
+    repositories.mavenInstaller {
+        pom {
+            project {
+                packaging 'aar'
+                groupId 'com.bodtec.libs'
+                artifactId 'push'
+                name 'push'
+                description 'bodtec libs push.'
+                url 'https://github.com/hujxhed/BodtecLibsPush'
+
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'hujxhed'
+                        name 'hujxhed'
+                        email 'hujxhed@foxmail.com'
+                    }
+                }
+
+                scm {
+                    connection 'https://github.com/hujxhed/BodtecLibsPush.git'
+                    developerConnection 'https://github.com/hujxhed/BodtecLibsPush.git'
+                    url 'https://github.com/hujxhed/BodtecLibsPush'
+                }
+            }
+        }
+    }
+}
